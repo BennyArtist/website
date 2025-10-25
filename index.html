@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Benny | Nonymous — Promoting Modern African Aesthetics</title>
+  
+
+  <meta name="description" content="Benny (Nonymous) — artist, singer and creator behind KAMWAAMBE. Promoting Modern African Aesthetics." />
+
+
+  <!-- Scroll-to-top button -->
+  
+
+<style>
+  /* Scroll-to-top button styles */
+  .scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 12px 16px;
+    background: linear-gradient(90deg,var(--accent),var(--accent2));
+    color: #111;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+    transition: transform 180ms ease, opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+  }
+  .scroll-top.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  // --- Scroll-to-top button behavior ---
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    if(!scrollBtn) return;
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300) scrollBtn.classList.add('show');
+      else scrollBtn.classList.remove('show');
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+
+
+  <style>
+    :root{
+      --bg:#0f0f12;
+      --surface:#121217;
+      --muted:#9aa0a6;
+      --accent:#ffb830;
+      --accent2:#ff5f7a;
+      --glass: rgba(255,255,255,0.04);
+      --text:#e9eef6;
+      --radius:14px;
+      --transition:300ms cubic-bezier(.2,.9,.2,1);
+    }
+    body[data-theme='light']{
+      --bg:#fbfbfc;
+      --surface:#ffffff;
+      --muted:#6b7280;
+      --accent:#0b6bff;
+      --accent2:#ff6b9a;
+      --glass: rgba(0,0,0,0.04);
+      --text:#0b1220;
+    }
+
+
+
+    *{box-sizing:border-box; -webkit-font-smoothing:antialiased}
+   html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden; /* prevents horizontal scroll */
+  scroll-behavior: smooth; /* smooth in-page anchors */
+  -webkit-text-size-adjust: 100%;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial;
+  line-height: 1.45;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 10% 10%, rgba(255,111,97,0.06), transparent),
+              radial-gradient(900px 500px at 90% 80%, rgba(255,184,48,0.04), transparent),
+              var(--bg);
+   /* optional for footer spacing */
+}
+
+    /* Container */
+    .wrap{max-width:1100px;margin:48px auto;padding:28px;position:relative}
+
+    input, textarea, select { font-size:16px; }
+
+    /* Header / Hero */
+    header{
+      display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:28px;
+    }
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{
+      width:70px;height:70px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:22px;box-shadow:0 6px 24px rgba(0,0,0,0.28);
+    }
+    .brand h1{margin:0;font-size:20px;letter-spacing:0.6px}
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+    .controls{display:flex;gap:12px;align-items:center}
+    .btn{
+      border:0;padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.03),var(--glass));
+      color:var(--text);cursor:pointer;font-weight:600;backdrop-filter: blur(6px);
+      transition:transform 180ms ease, box-shadow 180ms ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .primary{
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      color:#111;
+      box-shadow: 0 8px 30px rgba(255,111,97,0.12);
+    }
+
+    /* Phone: stack controls, larger tap targets, primary full-width */
+    @media (max-width: 480px){
+      header{flex-wrap:wrap}
+      .controls{width:100%;justify-content:stretch;gap:10px}
+      .controls .btn{font-size:16px; padding:12px 16px; min-height:44px; border-radius:12px; -webkit-tap-highlight-color: rgba(0,0,0,0); flex:1}
+      .controls .primary{width:100%; text-align:center}
+    }
+
+    /* Tablet: keep inline but increase tap comfort */
+    @media (min-width: 481px) and (max-width: 880px){
+      .controls{gap:12px}
+      .controls .btn{font-size:15px; padding:10px 14px; min-height:44px; border-radius:12px; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+    }
+
+    /* Hero card */
+    .hero{
+      display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:stretch;margin-bottom:28px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:22px;border-radius:var(--radius);box-shadow:0 10px 40px rgba(0,0,0,0.35);
+    }
+
+    .intro h2{margin:0 0 8px;font-size:26px}
+    .intro p{margin:0;color:var(--muted)}
+
+    .artist-photo{
+      height:100%;border-radius:12px;overflow:hidden;position:relative;
+      display:flex;flex-direction:column;justify-content:flex-end;
+      background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+    }
+    .artist-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.02) saturate(1.05);}
+    .artist-meta{padding:14px;color:white;background:linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));}
+    /* Ensure all caption text is white, including inline-colored elements */
+    .artist-meta .muted{color:#fff !important}
+    .artist-meta [style*="color"]{color:#fff !important}
+
+    .slogan{font-weight:600;color:var(--accent);}
+
+    /* Light theme: ensure hero text over image remains readable */
+    body[data-theme='light'] .artist-meta{
+      color:#fff;
+      background:linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.6));
+      text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+    }
+
+    /* Sections */
+    section{margin-bottom:28px;display:block}
+    .grid{display:grid;gap:18px}
+    .cols-2{grid-template-columns:1fr 360px}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    .muted{color:var(--muted);font-size:14px}
+    h3{margin:0 0 8px}
+
+    /* Services list */
+    .services{display:flex;flex-wrap:wrap;gap:10px}
+    .service{
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+      padding:12px;border-radius:10px;font-weight:600;font-size:14px;color:var(--muted);
+      min-width:140px;text-align:center;
+    }
+
+    /* Gallery/flyers */
+    .gallery{display:flex;gap:12px;flex-wrap:wrap}
+    .flyer{
+      flex:1 1 30%;min-width:180px;border-radius:12px;overflow:hidden;background:var(--surface);
+      cursor:pointer;transform:translateY(0);transition:transform 350ms var(--transition);
+      box-shadow:0 8px 30px rgba(2,6,23,0.45);
+      position:relative;
+    }
+    .flyer img{width:100%;height:240px;object-fit:cover;display:block}
+    .flyer .meta{padding:12px;background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.02));}
+    .flyer:hover{transform:translateY(-8px)}
+    .flyer .title{font-weight:700}
+
+    /* Music section */
+    .music-card{display:flex;gap:12px;align-items:center}
+    .music-cover{width:96px;height:96px;border-radius:10px;overflow:hidden;flex-shrink:0}
+    .tracks{display:flex;flex-direction:column;gap:8px}
+    .track{display:flex;align-items:center;gap:10px; padding:10px;border-radius:10px;background:var(--glass)}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
+    .map{height:300px;border-radius:12px;overflow:hidden}
+    iframe{width:100%;height:100%;border:0}
+
+    /* Footer */
+    footer{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:space-between}
+    .socials{display:flex;gap:10px}
+
+    /* small screens */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr; }
+      .cols-2{grid-template-columns:1fr;}
+      .contact-grid{grid-template-columns:1fr;}
+      .artist-photo{height:320px}
+    }
+
+    /* Make hero image taller on phones */
+@media (max-width: 880px) {
+  .artist-photo {
+    height: 650px; /* increase height for better visibility on phones */
+  }
+  .artist-photo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* keeps aspect ratio while filling container */
+  }
+}
+
+    /* Music responsiveness */
+    @media (max-width: 880px){
+      .music-card{flex-direction:column; align-items:stretch}
+      .music-cover{width:120px;height:120px}
+    }
+    @media (max-width: 480px){
+      .music-cover{width:96px;height:96px}
+      .tracks .track{font-size:14px}
+    }
+
+
+
+    /* Motion accents */
+    .float{
+      position:absolute;right:-80px;top:-40px;width:220px;height:220px;border-radius:20px;
+      background:linear-gradient(135deg, rgba(255,111,97,0.09), rgba(255,184,48,0.07));
+      filter: blur(36px);transform:translateZ(0);opacity:0.9;
+      pointer-events:none; /* do not block clicks on header controls */
+    }
+
+    /* subtle reveal */
+    .reveal{opacity:0;transform:translateY(16px);transition:all 700ms var(--transition)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+  </style>
+  <!-- Scroll to top button -->
+
+
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>BN</div>
+        <div>
+          <h1>Benny | <span style="opacity:.9">Nonymous</span></h1>
+          <p class="muted">Promoting Modern African Aesthetics</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="themeToggle" class="btn" title="Toggle light / dark">Toggle theme</button>
+        <a class="btn primary" href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="card intro">
+        <p class="slogan">Promoting Modern African Aesthetics</p>
+        <h2>Hi — I’m <strong>Benny</strong> (Nonymous)</h2>
+        <p class="muted">Singer blending Dancehall, RnB, Hip-hop, Pop, and Afro, and also the maker of hand-beaded pieces and modern accessories under <strong>KAMWAAMBE.</strong></p>
+
+        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn primary" href="music.html">Listen to my music</a>
+          <a class="btn" href="#business">Visit KAMWAAMBE</a>
+          <a class="btn" href="#gallery">Gallery</a>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:10px;align-items:center;">
+          <div style="display:flex;gap:10px;align-items:center">
+            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700">B</div>
+            <div>
+              <div style="font-weight:700">Benny (Nonymous)</div>
+              <div class="muted" style="font-size:13px">Born Jan 13, 2001 — started music at 14; bass & vocal training</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- tag -->
+      </div>
+
+      <div class="artist-photo card" aria-hidden>
+  <!-- Replace src with a nice portrait / hero image of her -->
+  <img id="heroImg" src="benny.jpg" alt="Benny — artist portrait" loading="lazy">
+  <div class="artist-meta">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+      <div>
+        <div style="font-weight:700">Benny — Singer • Maker • Creative Director</div>
+        <!-- Add roles here -->
+        <div style="margin-top:6px; font-size:14px; color:var(--muted); line-height:1.5;">
+          Social Media Manager • Social Media Strategist • Social Media Marketer • Creative Director • Event Manager • Film Maker
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-weight:700;color:var(--accent)">Age</div>
+        <div class="muted">24</div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <!-- About & Business -->
+    <section class="grid cols-2">
+      <div class="card reveal" id="about">
+        <h3>About Benny</h3>
+        <p class="muted">Stage name: <strong>Benny</strong>. Born January 13, 2001. From a young age she discovered music and at about 14 she began learning bass guitar and attending vocal training. Her music bridges genres — Dancehall, RnB, Hip-hop, Pop and Afro — and her craft is a voice of modern Malawian creativity.</p>
+
+        <p style="margin-top:12px" class="muted">This personal site highlights the artist behind the business: her story, her music, and the handmade vision of <strong>KAMWAAMBE</strong>.</p>
+
+        <h4 style="margin-top:14px">Style & Vision</h4>
+        <p class="muted">Creative, talented, and passionate about her work.</p>
+      </div>
+
+      <aside class="card reveal" id="business">
+        <h3>KAMWAAMBE</h3>
+        <p class="muted"><strong>Shop / Studio — Beaded Jewellery & More</strong></p>
+        <p class="muted"><em>Promoting Modern African Aesthetics</em></p>
+
+        <div style="margin-top:10px">
+          <div class="services">
+            <div class="service">Braiding</div>
+            <div class="service">Nails</div>
+            <div class="service">Makeup</div>
+            <div class="service">Tailoring & Design</div>
+            <div class="service">Bracelets</div>
+            <div class="service">Beaded Jewellery</div>
+            <div class="service">Bags & Handbags</div>
+            <div class="service">Facial Scrubs</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <strong class="muted">Location</strong>
+          <div class="muted" style="font-size:14px">Lilongwe (map below) — visit or contact to book a service</div>
+        </div>
+
+        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn" href="https://www.google.com/maps/place/-13.986593265408748,33.76676049595485" id="shopLink">Visit shop</a>
+          <a class="btn" href="#contact">Book a slot</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Gallery / Flyers -->
+    <section id="gallery" class="card reveal">
+      <h3>Gallery & Flyers</h3>
+      <p class="muted">A selection of artwork, promotional flyers, and product shots. Click to view or open social pages.</p>
+
+      <div class="gallery" style="margin-top:12px">
+        <!-- Replace images & links -->
+        <div class="flyer" role="link" tabindex="0" onclick="openFlyer(0)" onkeypress="if(event.key==='Enter')openFlyer(0)">
+          <img src="studio.jpg" alt="Flyer 1 — replace" loading="lazy">
+          <div class="meta">
+            <div class="title">Tailoring • Designing</div>
+            <div class="muted">• Instagram</div>
+          </div>
+        </div>
+
+        <div class="flyer" role="link" tabindex="0" onclick="openFlyer(1)" onkeypress="if(event.key==='Enter')openFlyer(1)">
+          <img src="makeup.jpg" alt="Flyer 2 — replace" loading="lazy">
+          <div class="meta">
+            <div class="title">Makeup • Braiding</div>
+            <div class="muted">• TikTok</div>
+          </div>
+        </div>
+
+        <div class="flyer" role="link" tabindex="0" onclick="openFlyer(2)" onkeypress="if(event.key==='Enter')openFlyer(2)">
+          <img src="music.jpg" alt="Flyer 3 — replace" loading="lazy">
+          <div class="meta">
+            <div class="title">Music • Events • Collaborations</div>
+            <div class="muted">• Facebook </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Music -->
+    <section id="music" class="card reveal">
+  <h3>Music & Collaborations</h3>
+
+  <div class="music-card" style="margin-top:10px">
+    <div class="music-cover">
+      <img 
+        src="benny1.jpg" 
+        alt="cover" 
+        style="width:100%;height:100%;object-fit:cover;border-radius:10px;">
+    </div>
+
+    <div class="tracks">
+      <div class="muted">Featured Collaborations</div>
+      <div class="track"><strong>Magic Mike</strong> — (collab)</div>
+      <div class="track"><strong>IZZAH</strong> — (collab)</div>
+      <div class="track"><strong>SAINT</strong> — (collab)</div>
+    </div>
+
+    <!-- Music platform link -->
+    <div style="margin-top:16px;">
+      <div class="muted" style="font-size:14px; margin-bottom:6px;">Listen on music platforms:</div>
+      <a href="https://www.malawi-music.com/N/3126-nonymous" target="_blank" class="btn primary">Stream my song</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact + Map -->
+    <section id="contact" class="card reveal">
+      <h3>Contact & Visit</h3>
+      <div class="contact-grid" style="margin-top:12px">
+        <div>
+          <p class="muted">For bookings, collaborations, or custom pieces — send a message or use the social links.</p>
+
+<form id="contactForm" 
+      action="https://formspree.io/f/mnnoqndp" 
+      method="POST" 
+      onsubmit="event.preventDefault(); sendMessageAndSubmit();" 
+      style="display:grid;gap:10px;margin-top:10px">
+
+  <!-- Hidden fields for Formspree customization -->
+  <input type="hidden" name="_subject" value="New Message from Website">
+  <input type="hidden" id="redirectField" name="_next" value="thank-you.html">
+
+  <input id="name" name="name" required placeholder="Your name" style="padding:10px;border-radius:8px;border:0;background:var(--glass);color:var(--text)">
+  <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="Phone number" style="padding:10px;border-radius:8px;border:0;background:var(--glass);color:var(--text)">
+  <textarea id="message" name="message" required placeholder="Message / booking details" rows="4" style="padding:10px;border-radius:8px;border:0;background:var(--glass);color:var(--text)"></textarea>
+
+  <div style="display:flex;gap:10px">
+    <button type="submit" class="btn primary">Send Message</button>
+    <button type="button" class="btn" onclick="openShop()">Visit Shop</button>
+  </div>
+
+  <div id="formNote" class="muted" style="font-size:13px"></div>
+</form>
+
+        </div>
+
+        <aside>
+          <div class="map">
+            <!-- Google Maps Embed (replace lat,long if needed) -->
+            <iframe id="mapFrame"
+              src="https://maps.google.com/maps?q=-13.9626,33.7741&z=15&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">KAMWAAMBE</div>
+              <div class="muted" style="font-size:13px">Beaded Jewellery • Services</div>
+            </div>
+            <div class="socials">
+              <!-- Replace hrefs with her real social links -->
+              <a title="Instagram" href="https://www.instagram.com/mwnonymous/" class="btn">IG</a>
+              <a title="Facebook" href="https://facebook.com/nonymousmw" class="btn">FB</a>
+              <a title="TikTok" href="https://www.tiktok.com/@benny4767" class="btn">TT</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Benny | Nonymous — Promoting Modern African Aesthetics</div>
+      
+    </footer>
+
+    <div class="float" aria-hidden id="floatBlob"></div>
+
+    <!-- Scroll-to-top button (moved from head into body) -->
+    <button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">↑ Top</button>
+
+  </div>
+
+  <script>
+  function sendMessageAndSubmit() {
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+
+    // Example: your custom logic, e.g., showing a note
+    const note = document.getElementById('formNote');
+    note.textContent = "Sending your message...";
+    note.style.color = "green";
+
+    // Ensure Formspree redirect uses absolute URL
+    const redirect = document.getElementById('redirectField');
+    if (redirect) {
+      redirect.value = new URL(redirect.value, window.location.href).toString();
+    }
+   
+    document.getElementById('contactForm').submit();
+  }
+</script>
+
+  <script>
+    // --- Theme toggle ---
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    // Save preference in localStorage
+    function currentTheme(){ return document.body.getAttribute('data-theme') || 'dark' }
+    themeToggle.addEventListener('click', ()=>{
+      const next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', next);
+      localStorage.setItem('bn_theme', next);
+    });
+    // load pref
+    (function(){
+      const pref = localStorage.getItem('bn_theme');
+      if(pref) document.body.setAttribute('data-theme', pref);
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+
+    // --- smooth scroll + focus for Contact/Book links ---
+    document.querySelectorAll('a[href="#contact"]').forEach((a)=>{
+      a.addEventListener('click', (e)=>{
+        // let browser handle hash but enhance with focus after smooth scroll
+        e.preventDefault();
+        const target = document.getElementById('contact');
+        if(target){
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setTimeout(()=>{
+            const nameInput = document.getElementById('name');
+            if(nameInput) nameInput.focus();
+          }, 450);
+        }
+        // keep URL hash consistent
+        history.pushState(null, '', '#contact');
+      });
+    });
+
+    // --- simple gallery flyer open (link placeholders) ---
+    const flyers = [
+      { title:'Signature Beaded Collection', url:'https://www.instagram.com/kamwaambe/' },
+      { title:'KAMWAAMBE Studio Promo', url:'https://www.tiktok.com/@benny4767' },
+      { title:'Live Performance • Nonymous', url:'https://facebook.com/nonymousmw' }
+    ];
+    function openFlyer(i){
+      const f = flyers[i];
+      if(f && f.url && f.url !== '#') window.open(f.url, '_blank');
+      else alert('Flyer link not set. Replace placeholder links in the code with real social/shop URLs.');
+    }
+
+    function openShop() {
+  // Google Maps URL (opens in new tab)
+  const mapURL = "https://www.google.com/maps/place/-13.986593265408748,33.76676049595485";
+  window.open(mapURL, "_blank");
+}
+
+    // --- contact form demo (no backend) ---
+    function sendMessage(){
+      
+      const note = document.getElementById('formNote');
+      note.textContent = 'Message captured — please replace with a working backend to receive messages.';
+      note.style.color = 'var(--accent2)';
+      setTimeout(()=> note.textContent='', 4200);
+    }
+
+    // --- reveal on scroll ---
+    const reveals = document.querySelectorAll('.reveal');
+    function checkReveal(){
+      const windowBottom = window.innerHeight;
+      reveals.forEach(el=>{
+        const rect = el.getBoundingClientRect();
+        if(rect.top < windowBottom - 80) el.classList.add('visible');
+      });
+    }
+    checkReveal();
+    window.addEventListener('scroll', checkReveal);
+
+    // --- subtle floating blob motion ---
+    const blob = document.getElementById('floatBlob');
+    let t = 0;
+    function animateBlob(){
+      t += 0.01;
+      const x = Math.sin(t*0.8) * 40;
+      const y = Math.cos(t*0.9) * 22;
+      blob.style.transform = `translate(${x}px, ${y}px) rotate(${t*8}deg)`;
+      requestAnimationFrame(animateBlob);
+    }
+    animateBlob();
+
+    // --- interactive tilt on hero image ---
+    const hero = document.querySelector('.artist-photo');
+    hero.addEventListener('mousemove', e=>{
+      const rect = hero.getBoundingClientRect();
+      const mx = (e.clientX - rect.left) / rect.width - 0.5;
+      const my = (e.clientY - rect.top) / rect.height - 0.5;
+      hero.style.transform = `perspective(900px) rotateY(${mx*4}deg) rotateX(${my*-3.5}deg)`;
+      hero.style.transition = 'transform 120ms linear';
+    });
+    hero.addEventListener('mouseleave', ()=>hero.style.transform='none');
+
+    // --- small animation for gallery entries on hover (JS fallback) ---
+    document.querySelectorAll('.flyer').forEach((el,i)=>{
+      el.addEventListener('mouseenter', ()=> el.style.boxShadow = '0 18px 60px rgba(2,6,23,0.55)');
+      el.addEventListener('mouseleave', ()=> el.style.boxShadow = '0 8px 30px rgba(2,6,23,0.45)');
+    });
+
+    // Accessibility: keyboard nav for flyers
+    document.querySelectorAll('.flyer').forEach((el,i)=>{
+      el.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') openFlyer(i) });
+    });
+
+    
+  </script>
+</body>
+</html>

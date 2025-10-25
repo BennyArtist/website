@@ -1,0 +1,126 @@
+/* Reset & box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure body takes full width */
+
+
+/* Images & media */
+img, video, iframe {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero / Grids (mobile overrides) */
+@media (max-width: 880px) {
+  .hero,
+  .contact-grid,
+  .cols-2,
+  .cols-3,
+  .grid {
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Cards & sections */
+@media (max-width: 880px) {
+  .card, section, .artist-photo {
+    height: auto !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Floating blob */
+.float {
+  max-width: 100%;
+  width: 150px;
+  height: 150px;
+  right: -10px;
+  top: -10px;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gallery .flyer {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+/* Music cards */
+@media (max-width: 880px) {
+  .music-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.music-cover {
+  width: 100%;
+  height: auto;
+}
+
+/* Services */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.services .service {
+  flex: 1 1 45%;
+  min-width: 0;
+}
+
+/* Scroll-to-top button */
+#scrollTopBtn {
+  right: 10px;
+  bottom: 10px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+/* Small screens tweaks */
+@media (max-width: 880px) {
+  .hero,
+  .contact-grid,
+  .cols-2,
+  .cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .artist-photo {
+    height: auto;
+  }
+
+  .artist-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery .flyer {
+    flex: 1 1 100%;
+  }
+
+  .float {
+    width: 120px;
+    height: 120px;
+  }
+}
